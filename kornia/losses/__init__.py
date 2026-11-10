@@ -25,7 +25,8 @@ Which function to use, with the module form after the function:
 
 - Image reconstruction: structural dissimilarity of two images, :func:`ssim_loss`, :class:`SSIMLoss`; of two volumes,
   :func:`ssim3d_loss`, :class:`SSIM3DLoss`; over several scales plus an L1 term, :class:`MS_SSIMLoss`; the negative
-  PSNR, :func:`psnr_loss`, :class:`PSNRLoss`.
+  PSNR, :func:`psnr_loss`, :class:`PSNRLoss`; in the 2-D DFT domain, weighted by its own hardest frequencies,
+  :func:`focal_frequency_loss`, :class:`FocalFrequencyLoss`.
 - Smoothness of one image or depth map: :func:`total_variation`, :class:`TotalVariation`; edge-aware smoothness of an
   inverse depth map, :func:`inverse_depth_smoothness_loss`, :class:`InverseDepthSmoothnessLoss`.
 - Robust regression on tensors of any shape: linear for large residuals, :func:`charbonnier_loss`,
@@ -58,6 +59,7 @@ from .depth_smooth import InverseDepthSmoothnessLoss, inverse_depth_smoothness_l
 from .dice import DiceLoss, dice_loss
 from .divergence import js_div_loss_2d, kl_div_loss_2d
 from .focal import BinaryFocalLossWithLogits, FocalLoss, binary_focal_loss_with_logits, focal_loss
+from .focal_frequency import FocalFrequencyLoss, focal_frequency_loss
 from .geman_mcclure import GemanMcclureLoss, geman_mcclure_loss
 from .hausdorff import HausdorffERLoss, HausdorffERLoss3D
 from .lovasz_hinge import LovaszHingeLoss, lovasz_hinge_loss
@@ -91,6 +93,7 @@ __all__ = [
     "CauchyLoss",
     "CharbonnierLoss",
     "DiceLoss",
+    "FocalFrequencyLoss",
     "FocalLoss",
     "GemanMcclureLoss",
     "HausdorffERLoss",
@@ -116,6 +119,7 @@ __all__ = [
     "cauchy_loss",
     "charbonnier_loss",
     "dice_loss",
+    "focal_frequency_loss",
     "focal_loss",
     "geman_mcclure_loss",
     "inverse_depth_smoothness_loss",
