@@ -16,6 +16,7 @@ Conversions between color spaces, on float image tensors of shape ``(*, C, H, W)
    linear rgb <color.linear_rgb>
    hls <color.hls>
    hsv <color.hsv>
+   hvi <color.hvi>
    lab <color.lab>
    luv <color.luv>
    xyz <color.xyz>
@@ -48,6 +49,8 @@ All functions
    hls_to_rgb
    rgb_to_hsv
    hsv_to_rgb
+   rgb_to_hvi
+   hvi_to_rgb
    rgb_to_lab
    lab_to_rgb
    rgb_to_luv

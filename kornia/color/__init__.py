@@ -27,6 +27,8 @@ except for these:
 - Lab and Luv have L in :math:`[0, 100]`; Lab a and b lie in :math:`[-128, 127]`, and sRGB gives Luv u in
   :math:`[-84, 176]` and v in :math:`[-135, 108]`.
 - HLS and HSV hue is in radians, :math:`[0, 2\pi)`.
+- HVI has the intensity I in :math:`[0, 1]` and the chroma channels H and V within :math:`[-1, 1]`, shrunk in the
+  dark by the color-sensitivity scale.
 - YUV has U and V centred on 0, and YCbCr has Cb and Cr centred on 0.5.
 - :func:`apply_colormap` also takes values in :math:`[0, 255]`.
 
@@ -47,6 +49,8 @@ Which function to use, with the module form after the function:
   :class:`LinearRgbToRgb`.
 - Hue, lightness and saturation: :func:`rgb_to_hls`, :class:`RgbToHls`; :func:`hls_to_rgb`, :class:`HlsToRgb`.
 - Hue, saturation and value: :func:`rgb_to_hsv`, :class:`RgbToHsv`; :func:`hsv_to_rgb`, :class:`HsvToRgb`.
+- HVI, a dark-adapted polar HSV for low-light enhancement: :func:`rgb_to_hvi`, :class:`RgbToHvi`;
+  :func:`hvi_to_rgb`, :class:`HviToRgb`.
 - Perceptual spaces: Lab with :func:`rgb_to_lab`, :class:`RgbToLab`, :func:`lab_to_rgb`, :class:`LabToRgb`; Luv with
   :func:`rgb_to_luv`, :class:`RgbToLuv`, :func:`luv_to_rgb`, :class:`LuvToRgb`.
 - CIE XYZ: :func:`rgb_to_xyz`, :class:`RgbToXyz`; :func:`xyz_to_rgb`, :class:`XyzToRgb`.
@@ -68,6 +72,7 @@ from .colormap import ApplyColorMap, ColorMap, ColorMapType, RGBColor, apply_col
 from .gray import BgrToGrayscale, GrayscaleToRgb, RgbToGrayscale, bgr_to_grayscale, grayscale_to_rgb, rgb_to_grayscale
 from .hls import HlsToRgb, RgbToHls, hls_to_rgb, rgb_to_hls
 from .hsv import HsvToRgb, RgbToHsv, hsv_to_rgb, rgb_to_hsv
+from .hvi import HviToRgb, RgbToHvi, hvi_to_rgb, rgb_to_hvi
 from .lab import LabToRgb, RgbToLab, lab_to_rgb, rgb_to_lab
 from .luv import LuvToRgb, RgbToLuv, luv_to_rgb, rgb_to_luv
 from .raw import CFA, RawToRgb, RawToRgb2x2Downscaled, RgbToRaw, raw_to_rgb, raw_to_rgb_2x2_downscaled, rgb_to_raw
@@ -126,6 +131,7 @@ __all__ = [
     "GrayscaleToRgb",
     "HlsToRgb",
     "HsvToRgb",
+    "HviToRgb",
     "LabToRgb",
     "LinearRgbToRgb",
     "LuvToRgb",
@@ -139,6 +145,7 @@ __all__ = [
     "RgbToGrayscale",
     "RgbToHls",
     "RgbToHsv",
+    "RgbToHvi",
     "RgbToLab",
     "RgbToLinearRgb",
     "RgbToLuv",
@@ -165,6 +172,7 @@ __all__ = [
     "grayscale_to_rgb",
     "hls_to_rgb",
     "hsv_to_rgb",
+    "hvi_to_rgb",
     "lab_to_rgb",
     "linear_rgb_to_rgb",
     "luv_to_rgb",
@@ -177,6 +185,7 @@ __all__ = [
     "rgb_to_grayscale",
     "rgb_to_hls",
     "rgb_to_hsv",
+    "rgb_to_hvi",
     "rgb_to_lab",
     "rgb_to_linear_rgb",
     "rgb_to_luv",

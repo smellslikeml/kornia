@@ -25,8 +25,9 @@ hue is measured in radians. The conversion pages define the remaining channel or
    * - :doc:`Color conversion <color.conversions>`
      - Conversions between :doc:`grayscale <color.grayscale>`, :doc:`RGB <color.rgb>`, :doc:`BGR <color.bgr>`,
        :doc:`RGBA <color.rgba>`, :doc:`linear RGB <color.linear_rgb>`, :doc:`HLS <color.hls>`,
-       :doc:`HSV <color.hsv>`, :doc:`Lab <color.lab>`, :doc:`Luv <color.luv>`, :doc:`XYZ <color.xyz>`,
-       :doc:`YCbCr <color.ycbcr>`, :doc:`YUV <color.yuv>` and :doc:`Bayer RAW <color.raw>`.
+       :doc:`HSV <color.hsv>`, :doc:`HVI <color.hvi>`, :doc:`Lab <color.lab>`, :doc:`Luv <color.luv>`,
+       :doc:`XYZ <color.xyz>`, :doc:`YCbCr <color.ycbcr>`, :doc:`YUV <color.yuv>` and
+       :doc:`Bayer RAW <color.raw>`.
    * - :doc:`Colormap <color.colormap>`
      - Render single-channel images (depth, heat, edges) with a color map.
    * - :doc:`Sepia <color.sepia>`

@@ -28,6 +28,7 @@ from torch import nn
 from kornia.color.gray import BgrToGrayscale, GrayscaleToRgb, RgbToGrayscale
 from kornia.color.hls import HlsToRgb, RgbToHls
 from kornia.color.hsv import HsvToRgb, RgbToHsv
+from kornia.color.hvi import HviToRgb, RgbToHvi
 from kornia.color.lab import LabToRgb, RgbToLab
 from kornia.color.luv import LuvToRgb, RgbToLuv
 from kornia.color.raw import CFA, RawToRgb, RgbToRaw
@@ -125,6 +126,8 @@ _CLASSES = [
     RgbToHls,
     HsvToRgb,
     RgbToHsv,
+    HviToRgb,
+    RgbToHvi,
     LabToRgb,
     RgbToLab,
     LuvToRgb,
