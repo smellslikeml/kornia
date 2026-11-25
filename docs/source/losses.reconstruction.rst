@@ -27,6 +27,7 @@ Modules
 
 .. autoclass:: SSIMLoss
 .. autoclass:: SSIM3DLoss
+.. autoclass:: HaarPSILoss
 .. autoclass:: MS_SSIMLoss
 .. autoclass:: TotalVariation
 .. autoclass:: PSNRLoss

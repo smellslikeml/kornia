@@ -23,8 +23,9 @@ losses take logits, the Hausdorff losses probabilities, and the mutual-informati
 
 Which function to use, with the module form after the function:
 
-- Image reconstruction: structural dissimilarity of two images, :func:`ssim_loss`, :class:`SSIMLoss`; of two volumes,
-  :func:`ssim3d_loss`, :class:`SSIM3DLoss`; over several scales plus an L1 term, :class:`MS_SSIMLoss`; the negative
+- Image reconstruction: structural dissimilarity of two images, :func:`ssim_loss`, :class:`SSIMLoss`; the
+  Haar-wavelet perceptual dissimilarity, :class:`HaarPSILoss`; of two volumes, :func:`ssim3d_loss`,
+  :class:`SSIM3DLoss`; over several scales plus an L1 term, :class:`MS_SSIMLoss`; the negative
   PSNR, :func:`psnr_loss`, :class:`PSNRLoss`.
 - Smoothness of one image or depth map: :func:`total_variation`, :class:`TotalVariation`; edge-aware smoothness of an
   inverse depth map, :func:`inverse_depth_smoothness_loss`, :class:`InverseDepthSmoothnessLoss`.
@@ -59,6 +60,7 @@ from .dice import DiceLoss, dice_loss
 from .divergence import js_div_loss_2d, kl_div_loss_2d
 from .focal import BinaryFocalLossWithLogits, FocalLoss, binary_focal_loss_with_logits, focal_loss
 from .geman_mcclure import GemanMcclureLoss, geman_mcclure_loss
+from .haarpsi import HaarPSILoss
 from .hausdorff import HausdorffERLoss, HausdorffERLoss3D
 from .lovasz_hinge import LovaszHingeLoss, lovasz_hinge_loss
 from .lovasz_softmax import LovaszSoftmaxLoss, lovasz_softmax_loss
@@ -93,6 +95,7 @@ __all__ = [
     "DiceLoss",
     "FocalLoss",
     "GemanMcclureLoss",
+    "HaarPSILoss",
     "HausdorffERLoss",
     "HausdorffERLoss3D",
     "InverseDepthSmoothnessLoss",

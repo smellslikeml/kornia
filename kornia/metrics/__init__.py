@@ -29,7 +29,8 @@ Which function to use, with the module form after the function:
 - Detection: the IoU of every pair of boxes from two sets, :func:`mean_iou_bbox`; the PASCAL VOC mean average
   precision, :func:`mean_average_precision`.
 - Image quality: the PSNR of two images in dB, :func:`psnr`; the SSIM map of two images, :func:`ssim`,
-  :class:`SSIM`; of two volumes, :func:`ssim3d`, :class:`SSIM3D`.
+  :class:`SSIM`; of two volumes, :func:`ssim3d`, :class:`SSIM3D`; the Haar-wavelet perceptual similarity of two
+  images, :func:`haar_psi`.
 - Optical flow: the average endpoint error of two flows, :func:`aepe`, :class:`AEPE`; also exported as
   :func:`average_endpoint_error`.
 - Stereo: the mean absolute error of two disparity maps, :func:`mean_absolute_disparity_error`; the root mean squared
@@ -51,6 +52,7 @@ from .disparity import (
     root_mean_squared_disparity_error,
 )
 from .endpoint_error import AEPE, aepe, average_endpoint_error
+from .haarpsi import haar_psi
 from .mean_average_precision import mean_average_precision
 from .mean_iou import mean_iou, mean_iou_bbox
 from .pose import angle_error_mat, angle_error_vec, auc_from_errors, pose_errors, translation_ate
@@ -70,6 +72,7 @@ __all__ = [
     "auc_from_errors",
     "average_endpoint_error",
     "confusion_matrix",
+    "haar_psi",
     "kitti_d1_error",
     "mean_absolute_disparity_error",
     "mean_average_precision",
